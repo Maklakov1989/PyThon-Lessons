@@ -46,20 +46,38 @@
 # print(f'Результат функции 2: {my_func_2(x, y)}')
 
 print(('*' * 25), 'Задание №5', ('*' * 25))
-numbers = input('Введите числа, разделённые пробелом: ')
-numbers = numbers.split(' ')
-numbers = list(numbers)
-spisok = []
-for i in numbers:
-    i = int(i)
-    spisok.append(i)
-print(spisok)
-total = 0
-for number in spisok:
-    total = total + number
-print(total)
-number_add = 0
-
+# numbers = None
+# def numbers_summ():
+#     numbers = input('Введите числа, разделённые пробелом: ')
+#     numbers = numbers.split(' ')
+#     numbers = list(numbers)
+#     spisok = []
+#     for i in numbers:
+#         i = int(i)
+#         spisok.append(i)
+#     print(spisok)
+#     total = 0
+#     for number in spisok:
+#         total = total + number
+#     return total
+# print(numbers_summ())
+# number_add = 0
+# for number_2 in number_add:
+#     number_2 = input('Добавьте числа')
+#     if number_2 == 'нет':
+#         break
+#     else:
+#         number_2 = number_2.split(' ')
+#         number_2 = list(number_2)
+#         spisok2 = []
+#         for i in numbers:
+#             i = int(i)
+#             spisok2.append(i)
+#         print(spisok2)
+#         total2 = 0
+#         for number in spisok2:
+#             total2 = numbers_summ() + number
+#         print(total2)
 
 # def function_input(total):
 #     while (number_add == 'нет') == True:
@@ -78,3 +96,8 @@ number_add = 0
 #
 # function_input(total)
 
+print(('*' * 25), 'Задание №6', ('*' * 25))
+slovo = input('Введите слово латиницей с маленькой буквы: ')
+def shift():
+    return print(slovo.title())
+shift()
