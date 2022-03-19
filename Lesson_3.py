@@ -105,6 +105,5 @@ def shift():
         a = input()
     if a == 'n':
         print('Задание завершено! Спасибо!!')
-
 shift()
 
