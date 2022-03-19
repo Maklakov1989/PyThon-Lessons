@@ -2,7 +2,7 @@ print(('*' * 25), 'Задание №1', ('*' * 25))
 
 def devide(number_1, number_2):
     try:
-        return number_1 / number_2
+        return round(number_1 / number_2, 2)
     except: ZeroDivisionError
 number_1 = int(input('Введите 1 число: '))
 number_2 = int(input('Введите 2 число: '))
@@ -22,11 +22,11 @@ def max_func():
     s = max(x)
     x.remove(s)
     s2 = max(x)
-    print(s, s2)
+    print('Два максимальных числа из введённых: ', s, 'и', s2)
     return s + s2
-a = int(input('Введите занение 1: '))
-b = int(input('Введите занение 2: '))
-c = int(input('Введите занение 3: '))
+a = int(input('Введите значение 1: '))
+b = int(input('Введите значение 2: '))
+c = int(input('Введите значение 3: '))
 x = [a, b, c]
 print(f'Сумма максимальных 2-х значений из введённых - {max_func()}')
 print(('*' * 25), 'Задание №4', ('*' * 25))
@@ -85,26 +85,26 @@ print('Сумма всех введённых чисел - ', numbers_summ())
 print(('*' * 25), 'Задание №6', ('*' * 25))
 slovo = input('Введите слово латиницей с маленькой буквы: ')
 def shift():
-    return print(slovo.title())
-shift()
-print(('*' * 25), 'Задание №7', ('*' * 25))
-x = str(shift())
-print(x)
-print('Хотите ввести еще слова? y/n')
-a = input()
-f = []
-f.append(x)
-while a == 'y':
-    print('Введите следующее слово')
-    d = (input())
-    # d = d.title()
-    d = d.split(' ')
-    f.append(d)
-    print('Ваше слово с большой буквы - ', d)
-    print('Список введенных слов:', f)
-    print('Хотите продолжить y/n')
-#     a = input()
-if a == 'n':
-    print('Задание завершено! Спасибо!!')
+    x = slovo.title()
+    print('Введённое слово с большой буквы - ', x)
+    print(('*' * 25), 'Задание №7', ('*' * 25))
+    print('Хотите ввести еще слова? y/n')
+    a = input()
+    f = []
+    f.append(x)
+    while a == 'y':
+        print('Введите несколько слов через пробел: ')
+        d = (input())
+        d = d.title()
+        d = d.split(' ')
+        for el in d:
+            f.append(el)
+        print('Новые слова с большой буквы - ', d)
+        print('Список всех введенных слов:', f)
+        print('Хотите продолжить? y/n')
+        a = input()
+    if a == 'n':
+        print('Задание завершено! Спасибо!!')
 
+shift()
 
