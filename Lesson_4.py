@@ -1,4 +1,15 @@
-# print(('*' * 25), 'Задание №1 к лекции № 4 НЕ ГОТОВО!!!!', ('*' * 25))
+print(('*' * 25), 'Задание №1 к лекции № 4', ('*' * 25))
+from sys import argv
+
+skript_name, hours, rate, bonus = argv
+print(f'Часов отработано - {hours}')
+print(f'Часовая ставка - {rate}')
+print(f'Премия - {bonus}')
+
+salary = (int(hours) * int(rate)) + int(bonus)
+print(f'Заработная плата в месяц {salary}')
+
+
 # print(('*' * 25), 'Задание №2 к лекции № 4 НЕ ГОТОВО!!!!', ('*' * 25))
 # numbers = input('Введите список числел, разделённых пробелом: ')
 # numbers = numbers.split(' ')
@@ -21,7 +32,7 @@
 # print(f"Новый список: {new_list}")
 print(('*' * 25), 'Задание №4 к лекции № 4', ('*' * 25))
 from random import randint
-numbers = []
+my_list = []
 for i in range(12):
-    numbers.append(randint(0, 10))
-print(f'Дан случайный список - {numbers}')
+    my_list.append(randint(0, 10))
+print(f'Дан случайный список - {my_list}')
