@@ -1,15 +1,11 @@
-print(('*' * 25), 'Задание №1 к лекции № 4', ('*' * 25))
-from sys import argv
-
-skript_name, hours, rate, bonus = argv
-print(f'Часов отработано - {hours}')
-print(f'Часовая ставка - {rate}')
-print(f'Премия - {bonus}')
-
-salary = (int(hours) * int(rate)) + int(bonus)
-print(f'Заработная плата в месяц {salary}')
-
-
+# print(('*' * 25), 'Задание №1 к лекции № 4', ('*' * 25))
+# from sys import argv
+# skript_name, hours, rate, bonus = argv
+# print(f'Часов отработано - {hours}')
+# print(f'Часовая ставка - {rate}')
+# print(f'Премия - {bonus}')
+# salary = (int(hours) * int(rate)) + int(bonus)
+# print(f'Заработная плата в месяц {salary}')
 # print(('*' * 25), 'Задание №2 к лекции № 4 НЕ ГОТОВО!!!!', ('*' * 25))
 # numbers = input('Введите список числел, разделённых пробелом: ')
 # numbers = numbers.split(' ')
