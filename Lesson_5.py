@@ -11,12 +11,12 @@ for line in text:
     f_obj.write(line + '\n')
 f_obj.close()
 print(('*' * 25), 'Задание №2 к лекции № 5(не доделал)', ('*' * 25))
-my_f = open('HW_2.txt', 'r', encoding='utf-8')
+my_f = open('HW_2_2.txt', 'r', encoding='utf-8')
 content = my_f.readlines()
 print(content)
 lines = (len(content))
 print('Строк в файле - ', lines)
-
+print(('*' * 25), 'Задание №3 к лекции № 5(не доделал)', ('*' * 25))
 
 
 
