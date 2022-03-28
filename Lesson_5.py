@@ -1,10 +1,13 @@
 print(('*' * 25), 'Задание №1 к лекции № 5', ('*' * 25))
-
+text = []
+while True:
+    line = input('Введите текст: ')
+    text.append(line)
+    if line == "":
+        break
+print('Вы ввели: ', text)
 f_obj = open("HomeWork.txt", 'a')
-
-while words != (" "):
-    words = str(input("\n Введите текст: "))
-    break
-f_obj.write(text)
-print(f_obj.read())
+for line in text:
+    f_obj.write(line + '\n')
 f_obj.close()
+
