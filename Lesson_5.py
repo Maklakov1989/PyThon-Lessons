@@ -19,13 +19,17 @@ print('Строк в файле - ', lines)
 a = str(content)
 print('Количество слов в тексте - ', len(set(a.split())))
 f_obj.close()
-print(('*' * 25), 'Задание №3 к лекции № 5(не доделал)', ('*' * 25))
-f_salary = open('HW_2_3.txt', 'r', encoding='utf-8')
-list = []
-data = []
-for el_1 in f_salary.readlines():
-    el_2 = el_1.split(' ')
-    list.append(el_2)
+print(('*' * 25), 'Задание №3 к лекции № 5', ('*' * 25))
+with open('HW_2_3.txt', 'r', encoding='utf-8') as my_file:
+    task_3 = []
+    zp = []
+    my_list = my_file.read().split('\n')
+    for i in my_list:
+        i = i.split()
+        if int(i[1]) < 20000:
+            zp.append(i[0])
+        task_3.append(i[1])
+print(f'Оклад меньше 20.000 {zp}, средний оклад {sum(map(int, task_3)) / len(task_3)}')
 print(('*' * 25), 'Задание №4 к лекции № 5(не доделал)', ('*' * 25))
 print(('*' * 25), 'Задание №5 к лекции № 5', ('*' * 25))
 numbers = input('Введите числа через пробел: ')
