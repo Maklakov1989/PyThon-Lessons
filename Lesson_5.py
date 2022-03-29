@@ -30,7 +30,12 @@ with open('HW_2_3.txt', 'r', encoding='utf-8') as my_file:
             zp.append(i[0])
         task_3.append(i[1])
 print(f'Оклад меньше 20.000 {zp}, средний оклад {sum(map(int, task_3)) / len(task_3)}')
+my_file.close()
 print(('*' * 25), 'Задание №4 к лекции № 5(не доделал)', ('*' * 25))
+
+
+
+
 print(('*' * 25), 'Задание №5 к лекции № 5', ('*' * 25))
 numbers = input('Введите числа через пробел: ')
 f_obj = open("HW_2_5.txt", 'a')
