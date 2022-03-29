@@ -62,6 +62,28 @@ x = reduce(my_func, sum_list)
 print('Сумма всех элементов', x)
 f_obj.write(f'Сумма всех элементов {x}')
 f_obj.close()
+print(('*' * 25), 'Задание №6 к лекции № 5', ('*' * 25))
+with open('HW_2_6.txt', 'r') as my_file:
+    my_list = my_file.read().split('\n')
+    print(my_list)
+    predmet = []
+    hours = []
+    for el in my_list:
+        el = el.replace('.', '')
+        el = el.replace('—', '')
+        el = el.replace('(л)','')
+        el = el.replace('(пр)', '')
+        el = el.replace('(лаб)', '')
+        el = el.split(' ')
+        i = el[0]
+        l = el[1:]
+        y = [value for value in l if value]
+        predmet.append(i)
+        hours.append(y)
+print(predmet)
+print(hours)
+
+
 
 
 
