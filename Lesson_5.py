@@ -31,10 +31,19 @@ with open('HW_2_3.txt', 'r', encoding='utf-8') as my_file:
         task_3.append(i[1])
 print(f'Оклад меньше 20.000 {zp}, средний оклад {sum(map(int, task_3)) / len(task_3)}')
 my_file.close()
-print(('*' * 25), 'Задание №4 к лекции № 5(не доделал)', ('*' * 25))
+print(('*' * 25), 'Задание №4 к лекции № 5', ('*' * 25))
+my_dict = {'One' : "Один", 'Two' : "Два",'Three' : "Три",'Four' : "Четыре"}
 
-
-
+with open('HW_2_4.txt', 'r', encoding='utf-8') as my_file:
+    task_3 = []
+    perevod = []
+    my_list = my_file.read().split('\n')
+    for i in my_list:
+        i = i.split()
+        i.remove('—')
+        print(i)
+        print([my_dict[i[0]], i[1]])
+my_file.close()
 
 print(('*' * 25), 'Задание №5 к лекции № 5', ('*' * 25))
 numbers = input('Введите числа через пробел: ')
