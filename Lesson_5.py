@@ -63,9 +63,13 @@ print('Сумма всех элементов', x)
 f_obj.write(f'Сумма всех элементов {x}')
 f_obj.close()
 print(('*' * 25), 'Задание №6 к лекции № 5', ('*' * 25))
+from functools import reduce
+def my_func(prev_el, el):
+    """prev_el - предыдущий элемент, el - текущий элемент"""
+    return prev_el + el
 with open('HW_2_6.txt', 'r') as my_file:
     my_list = my_file.read().split('\n')
-    print(my_list)
+    print('Звпись в файле - ', my_list)
     predmet = []
     hours = []
     for el in my_list:
@@ -77,11 +81,12 @@ with open('HW_2_6.txt', 'r') as my_file:
         el = el.split(' ')
         i = el[0]
         l = el[1:]
-        y = [value for value in l if value]
+        y = [int(value) for value in l if value]
         predmet.append(i)
-        hours.append(y)
-print(predmet)
-print(hours)
+        hours.append(reduce(my_func, y))
+my_dict = dict(zip(predmet, hours))
+print('Преоразование в словарь - ', my_dict)
+my_file.close()
 
 
 
