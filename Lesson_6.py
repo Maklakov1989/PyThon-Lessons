@@ -24,3 +24,17 @@ class Road:
     road_length = 'Красный'
     road_width = 'Желтый'
     light_color_run = 'Зелёный'
+print(('*' * 25), 'Задание №2 к лекции № 6', ('*' * 25))
+class Road:
+    # атрибуты класса
+    def __init__(self):
+        self.road_length = 5000
+        self.road_width = 20
+    # методы класса
+    def waight(self):
+        waight = int(input('Введите массу асфальта на 1 м.кв.: '))
+        thickness = int(input('Введите толщину покрытия: '))
+        road_waight = self.road_length * self.road_width * waight * thickness
+        print("Масса материала, необходимого для покрытия дороги длинной 5 000 м и шириной 20 м.  - ", road_waight)
+r = Road()
+r.waight()
