@@ -1,11 +1,10 @@
 print(('*' * 25), 'Задание №1 к лекции № 6', ('*' * 25))
 from time import sleep
 class TrafficLight:
-# атрибуты класса
+    # атрибуты класса
     light_color_stop = 'Красный'
     light_color_wait = 'Желтый'
     light_color_run = 'Зелёный'
-
     # методы класса
     def running(self):
         print(f"Светофор загорелся красным!!!")
@@ -17,13 +16,6 @@ class TrafficLight:
         print(f"Светофор загорелся красным!!!")
 tr_l = TrafficLight()
 tr_l.running()
-print(('*' * 25), 'Задание №2 к лекции № 6', ('*' * 25))
-
-class Road:
-# атрибуты класса
-    road_length = 'Красный'
-    road_width = 'Желтый'
-    light_color_run = 'Зелёный'
 print(('*' * 25), 'Задание №2 к лекции № 6', ('*' * 25))
 class Road:
     # атрибуты класса
@@ -46,7 +38,6 @@ class Worker:
     def __init__(self):
         my_dict = {"wage": 30000, "bonus": 10000}
         self.income = my_dict["bonus"] + my_dict["wage"]
-
 class Position(Worker):
     def get_info(self):
         self.get_full_name = print(Worker.position,'-', Worker.name, Worker.surname)
