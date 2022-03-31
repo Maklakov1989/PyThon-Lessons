@@ -85,3 +85,27 @@ w = WorkCar(30, "черный", "Mazda", False)
 print(w.color, w.name)
 w.movement()
 w.show_speed()
+print(('*' * 25), 'Задание №5 к лекции № 6', ('*' * 25))
+class Stationery:
+    def __init__(self, title):
+        self.title = title
+    def draw(self):
+        print("Запуск отрисовки ")
+class Pen(Stationery):
+    pass
+    def draw(self):
+        print("Отрисовка ручкой")
+class Pencil(Stationery):
+    pass
+    def draw(self):
+        print("Отрисовка карандашем")
+class Handle(Stationery):
+    pass
+    def draw(self):
+        print("Отрисовка маркером")
+p = Pencil("Карандаш")
+pen = Pen('Ручка')
+h = Handle('Маркер')
+print(p.draw())
+print(pen.draw())
+print(h.draw())
