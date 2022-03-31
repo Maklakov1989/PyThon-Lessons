@@ -46,32 +46,42 @@ a = Position()
 a.get_info()
 print(('*' * 25), 'Задание №4 к лекции № 6', ('*' * 25))
 class Car:
-    
-    def _init_(self, speed, color, name, is_police):
+    def __init__(self, speed, color, name, is_police):
         self.speed = speed
         self.color = color
         self.name = name
         self.is_police = is_police
     def movement(self):
         self.go = print(f'Автомобиль двигается')
-        self.direction = input('Введите направление движения')
+        self.direction = input('Введите направление движения: ')
         self.turn = print('Автомобиль повернул', self.direction)
         self.stop = print('Автомобиль остановился')
     def show_speed(self):
         self.show_speed = print(f'Скорость движения - {self.speed} км/ч')
+
 class TownCar(Car):
-    def init(self, speed, color, name):
-        self.__init__(speed, color, name)
+    def init(self, speed, color, name, is_police):
+        super().__init__(speed, color, name, is_police)
+    def show_speed(self):
+        if self.speed >= 60:
+            print(f'ВНИМАНИЕ, ПРЕВЫШЕНИЕ!!! Скорость автомобиля {self.speed} км/ч')
 class SportCar(Car):
-    def init(self, speed, color, name):
-        self.__init__(speed, color, name)
+    def init(self, speed, color, name, is_police):
+        super().__init__(speed, color, name, is_police)
 class WorkCar(Car):
-    def init(self, speed, color, name):
-        self.__init__(speed, color, name)
+    def init(self, speed, color, name, is_police):
+        super().__init__(speed, color, name, is_police)
+    def show_speed(self):
+        if self.speed >= 40:
+            print(f'ВНИМАНИЕ, ПРЕВЫШЕНИЕ!!! Скорость автомобиля {self.speed} км/ч')
 class PoliceCar(Car):
-    def init(self, speed, color, name):
-        self.__init__(speed, color, name)
-
-
-t = TownCar(60, "белый", 'Mazda')
+    def init(self, speed, color, name, is_police):
+        super().__init__(speed, color, name, is_police)
+t = TownCar(70, "белый", "Mazda", False)
+print(t.color, t.name)
 t.movement()
+t.show_speed()
+w = WorkCar(30, "черный", "Mazda", False)
+print(w.color, w.name)
+w.movement()
+w.show_speed()
