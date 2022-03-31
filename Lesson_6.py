@@ -38,3 +38,18 @@ class Road:
         print("Масса материала, необходимого для покрытия дороги длинной 5 000 м и шириной 20 м.  - ", road_waight)
 r = Road()
 r.waight()
+print(('*' * 25), 'Задание №3 к лекции № 6', ('*' * 25))
+class Worker:
+    name = "Михалыч"
+    surname = "Михалычев"
+    position = "Бригадир"
+    def __init__(self):
+        my_dict = {"wage": 30000, "bonus": 10000}
+        self.income = my_dict["bonus"] + my_dict["wage"]
+
+class Position(Worker):
+    def get_info(self):
+        self.get_full_name = print(Worker.position,'-', Worker.name, Worker.surname)
+        self.get_total_income = print('Получает заработную плату - ', self.income, 'руб.')
+a = Position()
+a.get_info()
