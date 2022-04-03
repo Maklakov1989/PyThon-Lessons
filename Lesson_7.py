@@ -1,16 +1,16 @@
 print(('*' * 25), 'Задание №1 к лекции № 7', ('*' * 25))
-from random import randint
 class Matrix:
-    def __init__(self, param_1, param_2):
+    def __init__(self, param_1, param_2, param_3):
         self.param_1 = param_1
         self.param_2 = param_2
+        self.param_3 = param_3
     def spisok(self):
-        my_list = [randint(self.param_1, self.param_2) for i in range(4)]
-        my_list_2 = [randint(self.param_1 + 1, self.param_2 + 1) for i in range(4)]
-        my_list_3 = [my_list, my_list_2]
-        for el in my_list_3:
+        self.my_list = [self.param_1, self.param_2, self.param_3]
+        for el in self.my_list:
             print(el)
-m = Matrix(5,8)
+    def __str__(self):
+        return f'Выми были введены 2 числа {self.param_1}, {self.param_2} и {self.param_3} из которых в случайном порядке ' \
+               f'была сделана матрица 2х4'
+m = Matrix([5, 8], [6, 9], [4, 1])
 print(m.spisok())
-
-
+print(m.__str__())
