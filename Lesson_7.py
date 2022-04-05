@@ -20,10 +20,10 @@ print(m.spisok(), m2.spisok(), m3.spisok())
 print(m.__str__(), m2.__str__(), m3.__str__())
 print(m + m2 + m3)
 print(('*' * 25), 'Задание №2 к лекции № 7', ('*' * 25))
-class Clothes:
+from abc import ABC
+class Clothes(ABC):
     def __init__(self, size):
         self.size = size
-
 class Coat(Clothes):
     def __init__(self, size):
         self.size = size
