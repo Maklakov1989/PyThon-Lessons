@@ -46,14 +46,29 @@ print(('*' * 25), 'Задание №3 к лекции № 7', ('*' * 25))
 class Cell:
     def __init__(self, quont):
         self.quont = quont
+        self.cell = []
     def __add__(self, other):
         return Cell(self.quont + other.quont)
-
-
-
+    def __sub__(self, other):
+        if self.quont - other.quont > 0:
+            return f'Произошло объединение клеток {Cell(self.quont - other.quont)}'
+        else:
+            return 'Что-то пошло не так!!!'
+    def __mul__(self, other):
+        self.cell.append(Cell(self.quont * other.quont))
+        if self.cell != None:
+            return f'Cоздана новая клетка {Cell(self.quont * other.quont)}'
+        else:
+            return 'Ничего не произошло'
+    def __truediv__(self, other):
+        self.cell.append(Cell(self.quont / other.quont))
+        return f'Cоздана новая клетка делением {Cell(round(self.quont / other.quont, 0))}'
     def __str__(self):
-        return f"Объект с параметрами ({self.quont})"
+        return f"клетка с параметрами ({self.quont})"
 
 c_1 = Cell(5)
 c_2 = Cell(6)
 print(c_1 + c_2)
+print(c_1 - c_2)
+print(c_1 * c_2)
+print(c_1 / c_2)
