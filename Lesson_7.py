@@ -53,7 +53,7 @@ class Cell:
         if self.quont - other.quont > 0:
             return f'Произошло объединение клеток {Cell(self.quont - other.quont)}'
         else:
-            return 'Что-то пошло не так!!!'
+            return 'Что-то пошло не так, отрицательное количество ячеек!!!'
     def __mul__(self, other):
         self.cell.append(Cell(self.quont * other.quont))
         if self.cell != None:
@@ -61,10 +61,10 @@ class Cell:
         else:
             return 'Ничего не произошло'
     def __truediv__(self, other):
-        self.cell.append(Cell(self.quont / other.quont))
+        self.cell.append(Cell(round(self.quont / other.quont, 0)))
         return f'Cоздана новая клетка делением {Cell(round(self.quont / other.quont, 0))}'
     def __str__(self):
-        return f"клетка с параметрами ({self.quont})"
+        return f"клетка с количеством ячеек ({self.quont})"
 
 c_1 = Cell(5)
 c_2 = Cell(6)
