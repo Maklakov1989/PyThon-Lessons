@@ -65,8 +65,8 @@ class Cell:
         return f'Cоздана новая клетка делением {Cell(round(self.quont / other.quont, 0))}'
     def __str__(self):
         return f"клетка с количеством ячеек ({self.quont})"
-c_1 = Cell(5)
-c_2 = Cell(6)
+c_1 = Cell(500)
+c_2 = Cell(65)
 print(c_1 + c_2)
 print(c_1 - c_2)
 print(c_1 * c_2)
