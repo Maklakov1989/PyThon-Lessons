@@ -17,3 +17,10 @@ class Date:
         print(f'Введённый пользователем месяц - {month}')
 Date.get_day(("десятое-декабря-2010"))
 print(Date.get_month("десятое-декабря-2010"))
+print(('*' * 25), 'Задание №2 к лекции № 8', ('*' * 25))
+class my_exeption(ZeroDivisionError):
+    try:
+        x = input('Введите число, которое мы будем делить на 0: ')
+        y = x / 0
+    except:
+        print("Деление на ноль недопустимо")
