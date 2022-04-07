@@ -19,9 +19,13 @@ Date.get_day(("десятое-декабря-2010"))
 print(Date.get_month("десятое-декабря-2010"))
 print(('*' * 25), 'Задание №2 к лекции № 8', ('*' * 25))
 class my_exeption(ZeroDivisionError):
+    def __init__(self, param):
+        self.param = param
     try:
-        x = input('Введите число, которое мы будем делить на 0: ')
-        y = x / 0
+        param = input('Введите число, которое мы будем делить на 0: ')
+        y = param / 0
     except:
         print("А делить на ноль нельзя!!")
 print(('*' * 25), 'Задание №3 к лекции № 8', ('*' * 25))
+class my_exeption(ZeroDivisionError):
+    try:
