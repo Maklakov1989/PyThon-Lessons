@@ -17,61 +17,62 @@ class Date:
         print(f'Введённый пользователем месяц - {month}')
 Date.get_day("десятое-декабря-2010")
 Date.get_month("десятое-декабря-2010")
-# print(('*' * 25), 'Задание №2 к лекции № 8', ('*' * 25))
-# class my_exeption(ZeroDivisionError):
-#     def __init__(self, param):
-#         self.param = param
-#     try:
-#         param = input('Введите число, которое мы будем делить на 0: ')
-#         y = param / 0
-#     except:
-#         print("А делить на ноль нельзя!!")
-# print(('*' * 25), 'Задание №3 к лекции № 8', ('*' * 25))
-# class Str_exeption(Exception):
-#     def __init__(self, list):
-#         self.list = list
-# inp_data = input("Введите любые значения (цифры, слова, буквы): ")
-# inp_data = inp_data.split(' ')
-# inp_data = list(inp_data)
-# data = []
-# try:
-#     for el in inp_data:
-#         if type(el) == int:
-#             data.append(el)
-#             raise Str_exeption("В списке есть слова")
-# except
+print(('*' * 25), 'Задание №2 к лекции № 8', ('*' * 25))
+class my_exeption(ZeroDivisionError):
+    def __init__(self, param):
+        self.param = param
+    try:
+        param = input('Введите число, которое мы будем делить на 0: ')
+        y = param / 0
+    except:
+        print("А делить на ноль нельзя!!")
+print(('*' * 25), 'Задание №3 к лекции № 8', ('*' * 25))
+class Str_exeption(Exception):
+    def __init__(self, list):
+        self.list = list
+inp_data = input("Введите любые значения: ")
+inp_data = inp_data.split(' ')
+res = []
+for item in inp_data:
+    try:
+        res.append(int(item))
+    except ValueError:
+        pass
+print('Введены числа - ', res)
+print('Хотите продолжить? y/n')
+a = input()
+f = []
+while a == 'y':
+    add_data = input('Введите любые значения через пробел: ')
+    add_data = add_data.split(' ')
+    for item in add_data:
+        try:
+            res.append(int(item))
+        except ValueError:
+            pass
+    print('Список новых чисел - ', res)
+    print('Хотите продолжить y/n')
+    a = input()
+    if a == 'n':
+        print('Задание завершено! Спасибо!!')
 #
-#
-# print('Хотите продолжить? y/n')
-#     a = input()
-#     f = []
-#     while a == 'y':
-#         print('Введите числа через пробел: ')
-#         d =(input())
-#         d = d.split(' ')
-#         d = list(d)
-#         for i in d:
-#             i = int(i)
-#             f.append(i)
-#         print('Список новых чисел - ', f)
-#         for number in f:
-#             total = total + number
-#         print(f'Cумма всех введённых чисел - {total}')
-#         print('Хотите продолжить y/n')
-#         a = input()
-#     if a == 'n':
-#         print('Задание завершено! Спасибо!!')
-print(('*' * 25), 'Задание №4 к лекции № 8', ('*' * 25))
-class Warehouse:
-    def __init__(self, units):
-         self.units = units
-class Equipment:
-    def __init__(self, type):
-         self.type = type
-class printer(Equipment):
-    def __init__(self, type):
-        self.type = type
-class scaner(Equipment):
-    pass
-class xerox(Equipment):
-    pass
+# print(('*' * 25), 'Задание №4 к лекции № 8', ('*' * 25))
+# class Warehouse:
+#     def __init__(self, quonts):
+#          self.quonts = quonts
+# class Equipment:
+#     def __init__(self, units, type):
+#         self.units = units
+#         self.type = type
+#         to_wh = {}
+# class printer(Equipment):
+#     def __init__(self, type, quont):
+#         self.type = type
+#         self.quont = quont
+#         to_wh[self.type] = self.quont
+# class scaner(Equipment):
+#     def __init__(self, type):
+#         self.type = type
+# class xerox(Equipment):
+#     def __init__(self, type):
+#         self.type = type
