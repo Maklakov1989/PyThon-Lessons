@@ -55,52 +55,101 @@ while a == 'y':
     a = input()
     if a == 'n':
         print('Задание завершено! Спасибо!!')
-print(('*' * 25), 'Задание №4 к лекции № 8', ('*' * 25))
-class Sklad:
-    def __init__(self):
-        self._dict = {}
-    def add_to(self, equipment):
-        ''' добавляем в словарь обьект по его названию, в значении
-        будет список экземпляров этого оборудования'''
-        self._dict.setdefault(equipment.name, []).append(equipment)
-    def extract(self, name):
-        ''' извлекаем из значения обьект по названию группы.
-        дальше можно расширить поиск по серии, марки или еще чему либо'''
-        if self._dict[name]:
-            self._dict.setdefault(name).pop(0)
-class Equipment:
-    def __init__(self, name, make, year):
-        self.name = name
-        self.make = make
-        self.year = year
-    def __repr__(self):
-        return f'{self.name}-{self.make}-{self.year}'
-class Printer(Equipment):
-    def __init__(self, series, name, make, year):
-        super().__init__(name, make, year)
-        self.series = series
-    def action(self):
-        return 'Печатает'
-class Scaner(Equipment):
-    def __init__(self, name, make, year):
-        super().__init__(name, make, year)
-    def action(self):
-        return 'Сканирует'
-class Xerox(Equipment):
-    def __init__(self, name, make, year):
-        super().__init__(name, make, year)
-    def action(self):
-        return 'Копирует'
-sklad = Sklad()
-# создаем объект и добавляем
-scaner = Scaner('hp', '321', 90)
-sklad.add_to(scaner)
-scaner = Scaner('hp', '311', 97)
-sklad.add_to(scaner)
-scaner = Scaner('hp', '331', 90)
-sklad.add_to(scaner)
-# выводим склад
-print(sklad._dict)
-# забираем с склада и выводим склад
-sklad.extract('hp')
-print(sklad._dict)
+print(('*' * 25), 'Задание №4,5,6 к лекции № 8', ('*' * 25))
+print("")
+class OfficeEquipmentWarehouse:
+    print("Склад оргтехники")
+class OfficeEquipment:
+    def __init__(self, producer, color):
+        self.producer = producer
+        self.color = color
+class Printer(OfficeEquipment):
+    amount_pr = 0
+    def __init__(self, producer, color, pr_type):
+        super().__init__(producer, color)
+        self.pr_type = pr_type
+        Printer.amount_pr += 1
+    @staticmethod
+    def name():
+        return "Принтер: "
+    def type_printer(self):
+        return self.pr_type
+    def __str__(self):
+        return f"    производитель: {self.producer}     цвет: {self.color}      тип принтера: {self.pr_type}"
+class Scanner(OfficeEquipment):
+    amount_sc = 0
+    def __init__(self, producer, color, sc_speed):
+        super().__init__(producer, color)
+        self.sc_speed = sc_speed
+        Scanner.amount_sc += 1
+    @staticmethod
+    def name():
+        return"Сканер: "
+    def type_speed(self):
+        return self.sc_speed
+    def __str__(self):
+        return f"    производитель: {self.producer}     цвет: {self.color}     скорость сканирования: {self.sc_speed} стр/мин"
+class Notepad(OfficeEquipment):
+    amount_n = 0
+    def __init__(self, producer, color, nb_wi_fi):
+        super().__init__(producer, color)
+        self.nb_wi_fi = nb_wi_fi
+        Notepad.amount_n += 1
+    @staticmethod
+    def name():
+        return "Ноутбук: "
+    def wi_fi_module(self):
+        return self.nb_wi_fi
+    def __str__(self):
+        return f"    производитель: {self.producer}     цвет: {self.color}       Wi-Fi модуль: {self.nb_wi_fi}"
+p = Printer('Canon', 'белый', 'струйный')
+p2 = Printer('Hp', 'серый', 'лазерный')
+p3 = Printer('Wanhao', 'серый', '3D')
+print(p.name(), p.amount_pr, "шт")
+print(p.__str__())
+print(p2.__str__())
+print(p3.__str__())
+
+s = Scanner('Epson', 'черный', '1')
+s2 = Scanner('Avision', 'белый', '2')
+s3 = Scanner('Kodak', 'желтый', '3')
+s4 = Scanner('HP','серый','4')
+print(s.name(), s.amount_sc, "шт")
+print(s.__str__())
+print(s2.__str__())
+print(s3.__str__())
+print(s4.__str__())
+
+n = Notepad('Lenovo', 'черный', 'есть')
+n2 = Notepad('Acer', 'золотой', 'есть')
+n3 = Notepad('HP', 'серый', 'есть')
+n4 = Notepad('Apple', 'серебро', 'отсутствует')
+print(n.name(), n.amount_n, "шт")
+print(n.__str__())
+print(n2.__str__())
+print(n3.__str__())
+print(n4.__str__())
+
+
+
+print(('*' * 25), 'Задание №7 к лекции № 8', ('*' * 25))
+class ComplexNum:
+    num_of_numbers = 0
+    def __init__(self, re, im):
+        self.re = re
+        self.im = im
+        ComplexNum.num_of_numbers += 1
+    def __del__(self):
+        print(f'Удалили число {self.re} + i*{self.im}')
+    def __str__(self):
+         return f"Комплексное число {self.re} + i*{self.im}"
+    def __add__(self, other):
+        return ComplexNum(self.re + other.re, self.im + other.im)
+    def __eq__(self, other):
+        return self.re == other.re and self.im == other.im
+    @staticmethod
+    def my_method():
+        return f"Количество чисел - {ComplexNum.num_of_numbers}"
+    @classmethod
+    def class_method(cls):
+        return(f'Инициализировано {ComplexNum.num_of_numbers} класса {cls}')
