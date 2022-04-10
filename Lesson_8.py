@@ -109,7 +109,6 @@ print(p.name(), p.amount_pr, "шт")
 print(p.__str__())
 print(p2.__str__())
 print(p3.__str__())
-
 s = Scanner('Epson', 'черный', '1')
 s2 = Scanner('Avision', 'белый', '2')
 s3 = Scanner('Kodak', 'желтый', '3')
@@ -119,7 +118,6 @@ print(s.__str__())
 print(s2.__str__())
 print(s3.__str__())
 print(s4.__str__())
-
 n = Notepad('Lenovo', 'черный', 'есть')
 n2 = Notepad('Acer', 'золотой', 'есть')
 n3 = Notepad('HP', 'серый', 'есть')
@@ -136,12 +134,12 @@ class ComplexNum:
         self.re = re
         self.im = im
         ComplexNum.num_of_numbers += 1
-    def __del__(self):
-        print(f'Удалили число {self.re} + i*{self.im}')
     def __str__(self):
          return f"Комплексное число {self.re} + i*{self.im}"
     def __add__(self, other):
         return ComplexNum(self.re + other.re, self.im + other.im)
+    def __mul__(self, other):
+        return ComplexNum(self.re * other.re, self.im * other.im)
     def __eq__(self, other):
         return self.re == other.re and self.im == other.im
     @staticmethod
@@ -150,3 +148,11 @@ class ComplexNum:
     @classmethod
     def class_method(cls):
         return(f'Инициализировано {ComplexNum.num_of_numbers} класса {cls}')
+mc = ComplexNum(1, 2)
+mc2 = ComplexNum(3, 4)
+print(mc)
+print(mc2)
+print('Сложение - ', mc + mc2)
+print('Умножение - ', mc * mc2)
+print(ComplexNum.my_method())
+print(ComplexNum.class_method())
