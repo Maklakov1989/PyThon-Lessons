@@ -129,9 +129,6 @@ print(n.__str__())
 print(n2.__str__())
 print(n3.__str__())
 print(n4.__str__())
-
-
-
 print(('*' * 25), 'Задание №7 к лекции № 8', ('*' * 25))
 class ComplexNum:
     num_of_numbers = 0
